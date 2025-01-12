@@ -83,9 +83,3 @@ This project is a **Blazor-based Employee Management System** that incorporates 
 - Implement performance reviews and appraisal tracking.
 
 
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-Let me know if you'd like additional customizations or help with any specific sections!
