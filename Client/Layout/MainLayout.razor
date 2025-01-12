@@ -1,0 +1,40 @@
+﻿@using Client.Pages.AccountPages
+@using Client.Pages.OtherPages
+@using Microsoft.AspNetCore.Authorization
+@inherits LayoutComponentBase
+@attribute [Authorize]
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu/>
+    </div>
+
+    <main>
+        <AuthorizeView>
+            <Authorized>
+                <div class="top-row px-4">
+                    <ProfileDropDown></ProfileDropDown>
+                </div>
+            </Authorized>
+            <NotAuthorized>
+                <LoginPage></LoginPage>
+            </NotAuthorized>
+        </AuthorizeView>
+      
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+ <Syncfusion.Blazor.Popups.SfDialogProvider/> 
+
+@code{
+    async Task LogoutClicked()
+    {
+        var logoutModel = new UserSession();
+        var customerAuthStateProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
+        await customerAuthStateProvider.UpdateAuthenticationState(logoutModel);
+        NavManager.NavigateTo("/", forceLoad: true);
+    }
+}

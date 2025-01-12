@@ -1,0 +1,73 @@
+﻿@using System.Net.Http
+@using System.Net.Http.Json
+@using BaseLibrary.Entities
+@using Client.ApplicationStates
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.AspNetCore.Components.WebAssembly.Http
+@using Microsoft.JSInterop
+@using Client
+@using Client.Layout
+
+
+@using BaseLibrary.DTOs
+@using ClientLibrary.Helpers
+@using Microsoft.AspNetCore.Components.Authorization
+@using ClientLibrary.Sevices.Contracts
+@using Syncfusion.Blazor.Popups
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Grids
+@using System.Security.Claims
+
+@using Microsoft.AspNetCore.Authorization
+
+@using Client.Pages.ContentPage.UserPages
+@using Client.Pages.ContentPage.LocationPages
+@using Client.Pages.ContentPage.DepartmentPages
+@using Client.Pages.OtherPages
+@using Client.Pages.ContentPage.EmployeePages
+@using Client.Pages.OtherPages.DoctorPages
+
+@using Client.Pages.OtherPages.OvertimePages
+@using Client.Pages.OtherPages.VacationPages
+@using Client.Pages.OtherPages.SanctionPages
+
+@using Client.Pages.ContentPage.ProfilePages
+
+@inject AuthenticationStateProvider AuthStateProvider
+@inject NavigationManager NavManager
+
+@inject IUserAccountService accountService
+
+@inject AllState allState
+
+@inject SfDialogService dialogService
+
+@inject IGenericServiceInterface<GeneralDepartment> generalDepartmentService
+@inject IGenericServiceInterface<Department> departmentService
+@inject IGenericServiceInterface<Branch> branchService
+
+@inject IGenericServiceInterface<Country> countryService
+@inject IGenericServiceInterface<City> cityService
+@inject IGenericServiceInterface<Town> townService
+
+@inject IGenericServiceInterface<Overtime> overtimeService
+@inject IGenericServiceInterface<OvertimeType> overtimeTypeService
+
+@inject IGenericServiceInterface<Vacation> vacationService
+@inject IGenericServiceInterface<VacationType> vacationTypeService
+
+@inject IGenericServiceInterface<Sanction> sanctionService
+@inject IGenericServiceInterface<SanctionType> sanctionTypeService
+
+@inject IGenericServiceInterface<Doctor> doctorService
+
+@inject IGenericServiceInterface<Department> departmentService
+
+@inject IGenericServiceInterface<Employee> employeeService
+
+@inject UserProfileState userProfileState
+@inject GetHttpClient getHttpClient
